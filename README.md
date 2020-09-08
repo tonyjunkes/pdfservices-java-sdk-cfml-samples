@@ -412,4 +412,4 @@ box task run taskFile=Exec :cfcPath=replacepages.ReplacePDFPages
 
 This project is licensed under the MIT License to stay in compliance with the official Java sample project from Adobe. See [LICENSE](LICENSE) for more information.
 
-> Each sample CFC in this product was based on the original class in the official Java project created by Adobe. All credit goes to the original creators/contributors. Thank you!
+> Each sample CFC in this project was based on the original classes in the official Java project created by Adobe. All credit goes to the original creators/contributors. Thank you!
