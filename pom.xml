@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.adobe.documentservices</groupId>
+  <artifactId>pdftools-sdk-samples</artifactId>
+  <version>${pdftools.sdk.samples.version}</version>
+
+  <name>PDF Tools Java SDK Samples</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <pdftools.sdk.version>1.1.0</pdftools.sdk.version>
+    <pdftools.sdk.samples.version>1.1.0</pdftools.sdk.samples.version>
+  </properties>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>com.adobe.documentservices</groupId>
+      <artifactId>pdftools-sdk</artifactId>
+      <version>${pdftools.sdk.version}</version>
+      <exclusions>
+        <!-- SLF4J will not be used and causes conflicts with ColdFusion -->
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.0</version>
+        <configuration>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.5.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>java</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- Package with dependencies -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.3.0</version>
+        <configuration>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+          <appendAssemblyId>false</appendAssemblyId>
+        </configuration>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>install</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- Copy JAR to /lib -->
+      <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.2.0</version>
+          <executions>
+              <execution>
+                  <id>copy-files-on-build</id>
+                  <phase>install</phase>
+                  <goals>
+                      <goal>copy-resources</goal>
+                  </goals>
+                  <configuration>
+                      <outputDirectory>${basedir}/lib</outputDirectory>
+                      <resources>
+                          <resource>
+                              <directory>${project.build.directory}</directory>
+                              <include>${project.artifactId}-${pdftools.sdk.version}.jar</include>
+                              <filtering>false</filtering>
+                          </resource>
+                      </resources>
+                  </configuration>
+              </execution>
+          </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

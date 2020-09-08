@@ -1,0 +1,9 @@
+# IDE
+.vscode
+.idea
+
+# Maven
+target
+
+# Generated Files
+output

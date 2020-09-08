@@ -1,0 +1,8 @@
+{
+    "name":"pdftools-java-sdk-cfml-samples",
+    "version":"0.1.0",
+    "author":"Tony Junkes",
+    "shortDescription":"Samples for the PDF Tools Java SDK using CFML.",
+    "description":"This sample project helps you get started with the Adobe Document Cloud PDF Tools Java SDK using CFML.",
+    "instructions":"Drop it in, fire up Commandbox in a temrinal and run: task run install && server start",
+}

@@ -1,0 +1,11 @@
+{
+    "name":"pdftools-java-sdk-cfml-samples",
+    "app":{
+        "cfengine":"adobe@2018"
+    },
+    "web":{
+        "http":{
+            "port":8520
+        }
+    }
+}
