@@ -45,6 +45,12 @@
 <h2>Protect PDF File</h2>
 <ul>
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=protectpdf.ProtectPDF">Convert a PDF File into a Password Protected PDF File</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=protectpdf.ProtectPDFWithOwnerPassword">Protect a PDF File with an Owner Password and Permissions</a></li>
+</ul>
+
+<h2>Remove Protection</h2>
+<ul>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=removeprotection.RemoveProtection">Remove Protection from a PDF File</a></li>
 </ul>
 
 <h2>Rotate Pages</h2>
@@ -70,4 +76,11 @@
 <h2>Replace Pages</h2>
 <ul>
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=replacepages.ReplacePDFPages">Replace PDF File Pages with Multiple PDF Files</a></li>
+</ul>
+
+<h2>Split PDF File</h2>
+<ul>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=splitpdf.SplitPDFByNumberOfPages">Split PDF By Number of Pages</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=splitpdf.SplitPDFIntoNumberOfFiles">Split PDF Into Number of PDF Files</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=splitpdf.SplitPDFByPageRanges">Split PDF By Page Ranges</a></li>
 </ul>

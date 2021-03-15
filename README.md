@@ -2,7 +2,7 @@
 
 > Based on the official Java sample project by Adobe found [here](https://github.com/adobe/pdftools-java-sdk-samples).
 
-This sample project helps you get started with the PDF Tools Java SDK.
+This sample project helps you get started with the PDF Tools Java SDK for use with Adobe's Document Services API.
 
 The sample ColdFusion Components illustrate how to perform PDF-related actions (such as converting to and from the PDF format) using the SDK. **Please note that the PDF Tools Java SDK supports only server side use cases.**
 
@@ -10,7 +10,6 @@ The sample ColdFusion Components illustrate how to perform PDF-related actions (
 The sample application has the following requirements:
 * Java JDK : Version 8 or above.
 * A CFML Engine: Adobe ColdFusion 2016+ (default) or Lucee 5+, as either a standalone install or via [CommandBox (recommended)](https://www.ortussolutions.com/products/commandbox).
-* Build Tool: The application requires Maven to be installed in order to properly pull in the JAR dependencies. Maven installation instructions can be found [here](https://maven.apache.org/install.html).
 
 ## Authentication Setup
 
@@ -29,16 +28,18 @@ of 5000 pages. Please contact [here](https://www.adobe.com/go/dcsdk_requestform)
 
 ## Build JAR Dependencies With Maven
 
+Maven must be installed in order to properly pull in the JAR dependencies. Maven installation instructions can be found [here](https://maven.apache.org/install.html).
+
 Run the following command to build the project dependencies into a usable JAR and placed into the /lib directory:
 ```$xslt
 mvn clean install
 ```
 
-Note that the PDF Tools SDK is listed as a dependency in the pom.xml and will be downloaded automatically. The project JAR is already built with the necessary dependencies and included in the project for use. If you need to re-build the project dependencies, you may run one of the following build processes described above.
+Note that the PDF Tools SDK is listed as a dependency in the pom.xml and will be downloaded automatically. The project JAR is already built with the necessary dependencies and included in the project for use. If you need to re-build the project dependencies, you may run the build process described above.
 
 ## A Note On Logging
 
-Unlike the Java samples which use the [slf4j API](https://www.slf4j.org/) with a log4j2-slf4j binding, logging is handled through the native CFML `writeLog()` function. To avoid any classpath conflicts, the pom.xml excludes the slf4j API JAR dependency.
+Unlike the Java samples which use the [slf4j API](https://www.slf4j.org/) with a log4j2-slf4j binding, logging in the example CFCs is handled through the native CFML `writeLog()` function. To avoid any classpath conflicts, the pom.xml excludes the slf4j API JAR dependency.
 
 ## Running the Samples
 
@@ -318,6 +319,38 @@ CommandBox:
 box task run taskFile=Exec :cfcPath=protectpdf.ProtectPDF
 ```
 
+#### Protect a PDF File with an Owner Password and Permissions
+
+The sample CFC ProtectPDFWithOwnerPassword secures an input PDF file with owner password and allows certain access permissions such as copying and editing the contents, and printing of the document at low resolution.
+
+Browser:
+```html
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=protectpdf.ProtectPDFWithOwnerPassword
+```
+
+CommandBox:
+```$xslt
+box task run taskFile=Exec :cfcPath=protectpdf.ProtectPDFWithOwnerPassword
+```
+
+### Remove Protection
+
+The sample illustrates how to remove a password security from a PDF document.
+
+#### Remove Protection from a PDF File
+
+The sample CFC RemoveProtection removes a password security from a secured PDF document.
+
+Browser:
+```html
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=removeprotection.RemoveProtection
+```
+
+CommandBox:
+```$xslt
+box task run taskFile=Exec :cfcPath=removeprotection.RemoveProtection
+```
+
 ### Rotate Pages
 
 The sample illustrates how to rotate pages in a PDF file.
@@ -406,6 +439,52 @@ http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=replacepages.Repla
 CommandBox:
 ```$xslt
 box task run taskFile=Exec :cfcPath=replacepages.ReplacePDFPages
+```
+
+### Split PDF File
+
+These samples illustrate how to split PDF file into multiple PDF files.
+
+#### Split PDF By Number of Pages
+
+The sample CFC SplitPDFByNumberOfPages splits input PDF into multiple PDF files on the basis of the maximum number of pages each of the output files can have.
+
+Browser:
+```html
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=splitpdf.SplitPDFByNumberOfPages
+```
+
+CommandBox:
+```$xslt
+box task run taskFile=Exec :cfcPath=splitpdf.SplitPDFByNumberOfPages
+```
+
+#### Split PDF Into Number of PDF Files
+
+The sample CFC SplitPDFIntoNumberOfFiles splits input PDF into multiple PDF files on the basis of the number of documents.
+
+Browser:
+```html
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=splitpdf.SplitPDFIntoNumberOfFiles
+```
+
+CommandBox:
+```$xslt
+box task run taskFile=Exec :cfcPath=splitpdf.SplitPDFIntoNumberOfFiles
+```
+
+#### Split PDF By Page Ranges
+
+The sample CFC SplitPDFByPageRanges splits input PDF into multiple PDF files on the basis of page ranges. Each page range corresponds to a single output file having the pages specified in the page range.
+
+Browser:
+```html
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=splitpdf.SplitPDFByPageRanges
+```
+
+CommandBox:
+```$xslt
+box task run taskFile=Exec :cfcPath=splitpdf.SplitPDFByPageRanges
 ```
 
 ### Licensing
