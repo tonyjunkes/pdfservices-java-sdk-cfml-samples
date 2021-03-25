@@ -47,7 +47,8 @@ component displayname="Combine PDF With Page Ranges" {
 
             // Save the result to the specified location.
             result.saveAs(application.outputPath & "/combineFilesWithPageOptionsOutput.pdf");
-        } catch(any e) {
+        }
+        catch(any e) {
             writeLog("Exception encountered while executing operation: #e.message#");
         }
     }

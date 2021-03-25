@@ -35,7 +35,8 @@ component displayname="Compress PDF" {
 
             // Save the result at the specified location
             result.saveAs(application.outputPath & "/compressPDFOutput.pdf");
-        } catch(any e) {
+        }
+        catch(any e) {
             writeLog("Exception encountered while executing operation #e.message#");
         }
     }

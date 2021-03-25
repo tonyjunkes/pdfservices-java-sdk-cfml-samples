@@ -5,13 +5,14 @@
 <h2>Create a PDF File</h2>
 <ul>
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.CreatePDFFromDOCX">Create a PDF File From a DOCX File</a></li>
-    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.createpdf.CreatePDFFromDOCXInputStream">Create a PDF File From a DOCX Input Stream</a></li>
-    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.createpdf.CreatePDFFromDOCXToOutputStream">Create a PDF File From a DOCX File (Write to an OutputStream)</a></li>
-    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.createpdf.CreatePDFFromPPTX">Create a PDF File From a PPTX File</a></li>
-    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.createpdf.CreatePDFFromStaticHTML">Create a PDF File From Static HTML (via Zip Archive)</a></li>
-    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.createpdf.CreatePDFFromDynamicHTML">Create a PDF File From Dynamic HTML (via Zip Archive)</a></li>
-    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.createpdf.CreatePDFWithInMemoryAuthCredentials">Create a PDF File From a DOCX File (By providing in-memory Authentication credentials)</a></li>
-    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.createpdf.CreatePDFWithCustomTimeouts">Create a PDF File From a DOCX File (By providing custom value for timeouts)</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.CreatePDFFromDOCXInputStream">Create a PDF File From a DOCX Input Stream</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.CreatePDFFromDOCXToOutputStream">Create a PDF File From a DOCX File (Write to an OutputStream)</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.CreatePDFFromDOCXWithOptions">Create a PDF File From a DOCX File With Options</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.CreatePDFFromPPTX">Create a PDF File From a PPTX File</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.CreatePDFFromStaticHTML">Create a PDF File From Static HTML (via Zip Archive)</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.CreatePDFFromDynamicHTML">Create a PDF File From Dynamic HTML (via Zip Archive)</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.CreatePDFWithInMemoryAuthCredentials">Create a PDF File From a DOCX File (By providing in-memory Authentication credentials)</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.CreatePDFWithCustomTimeouts">Create a PDF File From a DOCX File (By providing custom value for timeouts)</a></li>
 </ul>
 
 <h2>Export PDF to Other Formats</h2>
@@ -35,6 +36,7 @@
 <h2>Compress PDF File</h2>
 <ul>
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=compresspdf.CompressPDF">Reduce PDF File Size</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=compresspdf.CompressPDFWithOptions">Reduce PDF File Size on the basis of Compression Level</a></li>
 </ul>
 
 <h2>Linearize PDF File</h2>
@@ -83,4 +85,10 @@
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=splitpdf.SplitPDFByNumberOfPages">Split PDF By Number of Pages</a></li>
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=splitpdf.SplitPDFIntoNumberOfFiles">Split PDF Into Number of PDF Files</a></li>
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=splitpdf.SplitPDFByPageRanges">Split PDF By Page Ranges</a></li>
+</ul>
+
+<h2>Document Merge</h2>
+<ul>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=documentmerge.MergeDocumentToDOCX">Merge Document to DOCX</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=documentmerge.MergeDocumentToPDF">Merge Document to PDF</a></li>
 </ul>

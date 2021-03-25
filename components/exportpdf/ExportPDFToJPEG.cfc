@@ -40,7 +40,8 @@ component displayname="Export PDF To JPEG" {
 
             // Save the result to the specified location.
             result.saveAs(application.outputPath & "/exportPDFToJPEG.zip");
-        } catch(any e) {
+        }
+        catch(any e) {
             writeLog("Exception encountered while executing operation: #e.message#");
         }
     }

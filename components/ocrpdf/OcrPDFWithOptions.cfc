@@ -48,7 +48,8 @@ component displayname="OcrPDF" {
 
             // Save the result at the specified location
             result.saveAs(application.outputPath & "/ocrWithOptionsOutput.pdf");
-        } catch(any e) {
+        }
+        catch(any e) {
             writeLog("Exception encountered while executing operation: #e.message#");
         }
     }

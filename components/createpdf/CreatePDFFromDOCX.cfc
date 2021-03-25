@@ -33,7 +33,8 @@ component displayname="Create PDF From DOCX" {
 
             // Save the result to the specified location.
             result.saveAs(application.outputPath & "/createPDFFromDOCX.pdf");
-        } catch(any e) {
+        }
+        catch(any e) {
             writeLog("Exception encountered while executing operation: #e.message#");
         }
     }

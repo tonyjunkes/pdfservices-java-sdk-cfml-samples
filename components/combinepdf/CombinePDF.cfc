@@ -40,7 +40,8 @@ component displayname="Combine PDF" {
 
             // Save the result to the specified location.
             result.saveAs(application.outputPath & "/combineFilesOutput.pdf");
-        } catch(any e) {
+        }
+        catch(any e) {
             writeLog("Exception encountered while executing operation: #e.message#");
         }
     }

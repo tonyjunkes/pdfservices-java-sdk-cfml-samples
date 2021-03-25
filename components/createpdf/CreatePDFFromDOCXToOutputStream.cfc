@@ -37,7 +37,8 @@ component displayname="Create PDF From DOCX To OutputStream" {
             // Create an OutputStream and save the result to the stream.
             var outputStream = prepareOutputStream();
             result.saveAs(outputStream);
-        } catch(any e) {
+        }
+        catch(any e) {
             writeLog("Exception encountered while executing operation: #e.message#");
         }
     }

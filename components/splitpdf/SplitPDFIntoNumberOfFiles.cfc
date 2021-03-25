@@ -25,7 +25,7 @@ component displayname="SplitPDFIntoNumberOfFiles" {
             var splitPDFOperation = variables.java_SplitPDFOperation.createNew();
 
             // Set operation input from a source file.
-            var source = variables.java_FileRefFileRef.createFromLocalFile(
+            var source = variables.java_FileRef.createFromLocalFile(
                 application.resourcesPath & "/splitPDFInput.pdf"
             );
             splitPDFOperation.setInput(source);
@@ -39,7 +39,7 @@ component displayname="SplitPDFIntoNumberOfFiles" {
             // Save the result to the specified location.
             var index = 0;
             for (var fileRef in result) {
-                fileRef.saveAs(application.outputPath & "/SplitPDFIntoNumberOfFilesOutput_" + index + ".pdf");
+                fileRef.saveAs(application.outputPath & "/SplitPDFIntoNumberOfFilesOutput_" & index & ".pdf");
                 index++;
             }
         }

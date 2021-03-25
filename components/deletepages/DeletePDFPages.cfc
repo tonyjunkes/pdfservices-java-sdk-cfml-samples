@@ -40,7 +40,8 @@ component displayname="Delete PDF Pages" {
 
             // Save the result to the specified location.
             result.saveAs(application.outputPath & "/deletePagesOutput.pdf");
-        } catch(any e) {
+        }
+        catch(any e) {
             writeLog("Exception encountered while executing operation: #e.message#");
         }
     }

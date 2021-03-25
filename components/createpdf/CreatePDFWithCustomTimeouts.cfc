@@ -43,7 +43,8 @@ component displayname="Create PDF With Custom Timeouts" {
 
             // Save the result to the specified location.
             result.saveAs(application.outputPath & "/createPDFWithCustomTimeouts.pdf");
-        } catch(any e) {
+        }
+        catch(any e) {
             writeLog("Exception encountered while executing operation: #e.message#");
         }
     }

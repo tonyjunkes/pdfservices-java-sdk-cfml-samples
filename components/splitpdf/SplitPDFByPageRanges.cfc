@@ -42,7 +42,7 @@ component displayname="SplitPDFByPageRanges" {
             // Save the result to the specified location.
             var index = 0;
             for (var fileRef in result) {
-                fileRef.saveAs(application.outputPath & "/SplitPDFByPageRangesOutput_" + index + ".pdf");
+                fileRef.saveAs(application.outputPath & "/SplitPDFByPageRangesOutput_" & index & ".pdf");
                 index++;
             }
         }

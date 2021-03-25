@@ -70,6 +70,21 @@ CommandBox:
 box task run taskFile=Exec :cfcPath=createpdf.CreatePDFFromDOCX
 ```
 
+####  Create a PDF File From a DOCX File With Options
+
+The sample CFC CreatePDFFromDOCXWithOptions creates a PDF file from a DOCX file by setting documentLanguage as
+the language of input file.
+
+Browser:
+```html
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=createpdf.CreatePDFFromDOCXWithOptions
+```
+
+CommandBox:
+```$xslt
+box task run taskFile=Exec :cfcPath=createpdf.CreatePDFFromDOCXWithOptions
+```
+
 #### Create a PDF File From a DOCX Input Stream
 
 The sample CFC CreatePDFFromDOCXInputStream creates a PDF file from a DOCX input stream.
@@ -266,7 +281,7 @@ box task run taskFile=Exec :cfcPath=ocrpdf.OcrPDFWithOptions
 
 ### Compress PDF File
 
-The sample illustrates how to reduce the size of a PDF file.
+These samples illustrate how to reduce the size of a PDF file.
 
 #### Reduce PDF File Size
 
@@ -280,6 +295,21 @@ http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=compresspdf.Compre
 CommandBox:
 ```$xslt
 box task run taskFile=Exec :cfcPath=compresspdf.CompressPDF
+```
+
+####  Reduce PDF File Size On the Basis of Compression Level
+
+The sample CFC CompressPDFWithOptions reduces the size of a PDF file on the basis of provided compression level.
+Refer to the documentation of CompressionLevel to see the list of supported compression levels.
+
+Browser:
+```html
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=compresspdf.CompressPDFWithOptions
+```
+
+CommandBox:
+```$xslt
+box task run taskFile=Exec :cfcPath=compresspdf.CompressPDFWithOptions
 ```
 
 ### Linearize PDF File
@@ -321,7 +351,8 @@ box task run taskFile=Exec :cfcPath=protectpdf.ProtectPDF
 
 #### Protect a PDF File with an Owner Password and Permissions
 
-The sample CFC ProtectPDFWithOwnerPassword secures an input PDF file with owner password and allows certain access permissions such as copying and editing the contents, and printing of the document at low resolution.
+The sample CFC ProtectPDFWithOwnerPassword secures an input PDF file with owner password and allows certain access permissions
+such as copying and editing the contents, and printing of the document at low resolution.
 
 Browser:
 ```html
@@ -485,6 +516,42 @@ http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=splitpdf.SplitPDFB
 CommandBox:
 ```$xslt
 box task run taskFile=Exec :cfcPath=splitpdf.SplitPDFByPageRanges
+```
+
+### Document Merge
+
+Adobe Document Merge Operation allows you to produce high fidelity PDF and Word documents with dynamic data inputs. Using this operation, you can merge your JSON data with Word templates to create dynamic documents for contracts and agreements, invoices, proposals, reports, forms, branded marketing documents and more.
+
+To know more about document generation and document templates, please checkout the [documentation](http://www.adobe.com/go/dcdocgen_overview_doc)
+
+#### Merge Document to DOCX
+
+The sample CFC MergeDocumentToDOCX merges the Word based document template with the input JSON data to generate
+the output document in the DOCX format.
+
+Browser:
+```html
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=documentmerge.MergeDocumentToDOCX
+```
+
+CommandBox:
+```$xslt
+box task run taskFile=Exec :cfcPath=documentmerge.MergeDocumentToDOCX
+```
+
+#### Merge Document to PDF
+
+The sample CFC MergeDocumentToPDF merges the Word based document template with the input JSON data to generate
+the output document in the PDF format.
+
+Browser:
+```html
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=documentmerge.MergeDocumentToPDF
+```
+
+CommandBox:
+```$xslt
+box task run taskFile=Exec :cfcPath=documentmerge.MergeDocumentToPDF
 ```
 
 ### Licensing

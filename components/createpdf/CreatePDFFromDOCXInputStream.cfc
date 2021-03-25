@@ -41,7 +41,8 @@ component displayname="Create PDF From DOCX InputStream" {
 
             // Save the result to the specified location.
             result.saveAs(application.outputPath & "/createPDFFromDOCXStream.pdf");
-        } catch(any e) {
+        }
+        catch(any e) {
             writeLog("Exception encountered while executing operation: #e.message#");
         }
     }

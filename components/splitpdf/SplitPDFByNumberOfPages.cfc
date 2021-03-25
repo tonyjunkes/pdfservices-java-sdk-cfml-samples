@@ -40,7 +40,7 @@ component displayname="SplitPDFByNumberOfPages" {
             // Save the result to the specified location.
             var index = 0;
             for (var fileRef in result) {
-                fileRef.saveAs(application.outputPath & "/SplitPDFByNumberOfPagesOutput_" + index + ".pdf");
+                fileRef.saveAs(application.outputPath & "/SplitPDFByNumberOfPagesOutput_" & index & ".pdf");
                 index++;
             }
 
