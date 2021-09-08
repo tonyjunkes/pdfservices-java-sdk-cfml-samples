@@ -1,8 +1,12 @@
 {
-    "name":"pdftools-java-sdk-cfml-samples",
-    "version":"0.1.0",
+    "name":"pdfservices-java-sdk-cfml-samples",
+    "version":"2.0.0",
     "author":"Tony Junkes",
-    "shortDescription":"Samples for the PDF Tools Java SDK using CFML.",
-    "description":"This sample project helps you get started with the Adobe Document Cloud PDF Tools Java SDK using CFML.",
-    "instructions":"Run the project from a local CFML server or via CommandBox by executing 'box start' in your terminal."
+    "location":"https://github.com/tonyjunkes/pdfservices-java-sdk-cfml-samples.git",
+    "homepage": "https://github.com/tonyjunkes/pdfservices-java-sdk-cfml-samples",
+    "documentation": "https://github.com/tonyjunkes/pdfservices-java-sdk-cfml-samples/blob/master/README.md",
+    "shortDescription":"Samples for the PDF Services Java SDK using CFML.",
+    "description":"This sample project helps you get started with the Adobe Document Cloud PDF Services Java SDK using CFML.",
+    "instructions":"Run the project from a local CFML server or via CommandBox by executing 'box start' in your terminal.",
+    "license": [{"type": "MIT", "url": "https://github.com/tonyjunkes/pdfservices-java-sdk-cfml-samples/blob/master/LICENSE"}]
 }

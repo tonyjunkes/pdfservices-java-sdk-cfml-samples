@@ -8,7 +8,7 @@ component {
     };
 
     public boolean function onApplicationStart() {
-        application.credentialsJSONFile = expandPath("./pdftools-api-credentials.json");
+        application.credentialsJSONFile = expandPath("./pdfservices-api-credentials.json");
         application.privateKeyFile = expandPath("./private.key");
         application.resourcesPath = expandPath("/resources");
         application.outputPath = expandPath("/output");

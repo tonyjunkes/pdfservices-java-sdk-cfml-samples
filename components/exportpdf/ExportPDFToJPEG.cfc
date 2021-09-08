@@ -7,11 +7,11 @@
  */
 component displayname="Export PDF To JPEG" {
     public ExportPDFToJPEG function init() {
-        variables.java_Credentials = createObject("java", "com.adobe.platform.operation.auth.Credentials");
-        variables.java_ExecutionContext = createObject("java", "com.adobe.platform.operation.ExecutionContext");
-        variables.java_ExportPDFOperation = createObject("java", "com.adobe.platform.operation.pdfops.ExportPDFOperation");
-        variables.java_ExportPDFTargetFormat = createObject("java", "com.adobe.platform.operation.pdfops.options.exportpdf.ExportPDFTargetFormat");
-        variables.java_FileRef = createObject("java", "com.adobe.platform.operation.io.FileRef");
+        variables.java_Credentials = createObject("java", "com.adobe.pdfservices.operation.auth.Credentials");
+        variables.java_ExecutionContext = createObject("java", "com.adobe.pdfservices.operation.ExecutionContext");
+        variables.java_ExportPDFOperation = createObject("java", "com.adobe.pdfservices.operation.pdfops.ExportPDFOperation");
+        variables.java_ExportPDFTargetFormat = createObject("java", "com.adobe.pdfservices.operation.pdfops.options.exportpdf.ExportPDFTargetFormat");
+        variables.java_FileRef = createObject("java", "com.adobe.pdfservices.operation.io.FileRef");
 
         return this;
     }

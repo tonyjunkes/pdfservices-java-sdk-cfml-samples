@@ -92,3 +92,15 @@
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=documentmerge.MergeDocumentToDOCX">Merge Document to DOCX</a></li>
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=documentmerge.MergeDocumentToPDF">Merge Document to PDF</a></li>
 </ul>
+
+<h2>Extract PDF</h2>
+<ul>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=extractpdf.ExtractTextInfoFromPDF">Extract Text Elements</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=extractpdf.ExtractTextTableInfoFromPDF">Extract Text, Table Elements</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=extractpdf.ExtractTextTableInfoWithRenditionsFromPDF">Extract Text, Table Elements with Renditions of Table Elements</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=extractpdf.ExtractTextTableInfoWithFiguresTablesRenditionsFromPDF">Extract Text, Table Elements with Renditions of Figure, Table Elements</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=extractpdf.ExtractTextInfoWithCharBoundsFromPDF">Extract Text Elements and Bounding Boxes For Characters Present In Text Blocks</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=extractpdf.ExtractTextTableInfoWithCharBoundsFromPDF">Extract Text, Table Elements and Bounding Boxes For Characters Present In Text Blocks with Renditions of Table Elements</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=extractpdf.ExtractTextTableInfoWithTableStructureFromPdf">Extract Text, Table Elements with Renditions and CSV's of Table Elements</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=extractpdf.ExtractTextTableInfoWithStylingFromPDF">Extract Text, Table Elements with Styling information of Text</a></li>
+</ul>

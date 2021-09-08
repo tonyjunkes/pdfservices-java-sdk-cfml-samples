@@ -5,11 +5,11 @@
  */
 component displayname="Insert PDF Pages" {
     public InsertPDFPages function init() {
-        variables.java_Credentials = createObject("java", "com.adobe.platform.operation.auth.Credentials");
-        variables.java_ExecutionContext = createObject("java", "com.adobe.platform.operation.ExecutionContext");
-        variables.java_InsertPagesOperation = createObject("java", "com.adobe.platform.operation.pdfops.InsertPagesOperation");
-        variables.java_FileRef = createObject("java", "com.adobe.platform.operation.io.FileRef");
-        variables.java_PageRanges = createObject("java", "com.adobe.platform.operation.pdfops.options.PageRanges");
+        variables.java_Credentials = createObject("java", "com.adobe.pdfservices.operation.auth.Credentials");
+        variables.java_ExecutionContext = createObject("java", "com.adobe.pdfservices.operation.ExecutionContext");
+        variables.java_InsertPagesOperation = createObject("java", "com.adobe.pdfservices.operation.pdfops.InsertPagesOperation");
+        variables.java_FileRef = createObject("java", "com.adobe.pdfservices.operation.io.FileRef");
+        variables.java_PageRanges = createObject("java", "com.adobe.pdfservices.operation.pdfops.options.PageRanges");
 
         return this;
     }
@@ -18,7 +18,7 @@ component displayname="Insert PDF Pages" {
         try {
             // Initial setup, create credentials instance.
             var credentials = variables.java_Credentials.serviceAccountCredentialsBuilder()
-                .fromFile("pdftools-api-credentials.json")
+                .fromFile(application.credentialsJSONFile)
                 .build();
 
             // Create an ExecutionContext using credentials and create a new operation instance.

@@ -5,11 +5,11 @@
  */
 component displayname="Delete PDF Pages" {
     public DeletePDFPages function init() {
-        variables.java_Credentials = createObject("java", "com.adobe.platform.operation.auth.Credentials");
-        variables.java_ExecutionContext = createObject("java", "com.adobe.platform.operation.ExecutionContext");
-        variables.java_DeletePagesOperation = createObject("java", "com.adobe.platform.operation.pdfops.DeletePagesOperation");
-        variables.java_FileRef = createObject("java", "com.adobe.platform.operation.io.FileRef");
-        variables.java_PageRanges = createObject("java", "com.adobe.platform.operation.pdfops.options.PageRanges");
+        variables.java_Credentials = createObject("java", "com.adobe.pdfservices.operation.auth.Credentials");
+        variables.java_ExecutionContext = createObject("java", "com.adobe.pdfservices.operation.ExecutionContext");
+        variables.java_DeletePagesOperation = createObject("java", "com.adobe.pdfservices.operation.pdfops.DeletePagesOperation");
+        variables.java_FileRef = createObject("java", "com.adobe.pdfservices.operation.io.FileRef");
+        variables.java_PageRanges = createObject("java", "com.adobe.pdfservices.operation.pdfops.options.PageRanges");
 
         return this;
     }

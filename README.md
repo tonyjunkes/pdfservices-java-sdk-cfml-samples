@@ -1,19 +1,19 @@
-# Samples for the PDF Tools Java SDK Using CFML
+# Samples for the PDF Services Java SDK Using CFML
 
-> Based on the official Java sample project by Adobe found [here](https://github.com/adobe/pdftools-java-sdk-samples).
+> Based on the official Java sample project by Adobe found [here](https://github.com/adobe/pdfservices-java-sdk-samples).
 
-This sample project helps you get started with the PDF Tools Java SDK for use with Adobe's Document Services API.
+This sample project helps you get started with the PDF Services Java SDK for use with Adobe's Document Services API.
 
-The sample ColdFusion Components illustrate how to perform PDF-related actions (such as converting to and from the PDF format) using the SDK. **Please note that the PDF Tools Java SDK supports only server side use cases.**
+The sample ColdFusion Components illustrate how to perform PDF-related actions (such as converting to and from the PDF format) using the SDK. **Please note that the PDF Services Java SDK supports only server side use cases.**
 
 ## Prerequisites
 The sample application has the following requirements:
-* Java JDK : Version 8 or above.
+* Java JDK: Version 8 or above.
 * A CFML Engine: Adobe ColdFusion 2016+ (default) or Lucee 5+, as either a standalone install or via [CommandBox (recommended)](https://www.ortussolutions.com/products/commandbox).
 
 ## Authentication Setup
 
-The credentials file and corresponding private key file for the samples is `pdftools-api-credentials.json` and `private.key`
+The credentials file and corresponding private key file for the samples is `pdfservices-api-credentials.json` and `private.key`
 respectively. Before the samples can be run, replace both the files with the ones present in the downloaded zip file at
 the end of creation of credentials via [Get Started](https://www.adobe.io/apis/documentcloud/dcsdk/gettingstarted.html?ref=getStartedWithServicesSdk) workflow.
 
@@ -24,7 +24,7 @@ know more.
 ## Quota Exhaustion
 
 If you receive ServiceUsageException during the Samples run, it means that trial credentials have exhausted their quota
-of 5000 pages. Please contact [here](https://www.adobe.com/go/dcsdk_requestform) to get the paid credentials.
+of 5000 pages. Contact [Adobe](https://www.adobe.com/go/pdftoolsapi_requestform) to get paid credentials.
 
 ## Build JAR Dependencies With Maven
 
@@ -35,7 +35,11 @@ Run the following command to build the project dependencies into a usable JAR an
 mvn clean install
 ```
 
-Note that the PDF Tools SDK is listed as a dependency in the pom.xml and will be downloaded automatically. The project JAR is already built with the necessary dependencies and included in the project for use. If you need to re-build the project dependencies, you may run the build process described above.
+> Note: The PDF Services SDK is listed as a dependency in the pom.xml and will be downloaded automatically. The project JAR is already built with the necessary dependencies and included in the project for use. If you need to re-build the project dependencies, you may run the build process described above.
+
+## Java API Documentation
+
+Javadocs for the current and previous versions of the PDF Services library can be obtained from the [official Java sample project](https://github.com/adobe/pdfservices-java-sdk-samples/tree/master/docs).
 
 ## A Note On Logging
 
@@ -45,7 +49,7 @@ Unlike the Java samples which use the [slf4j API](https://www.slf4j.org/) with a
 
 To execute the samples, you will need to run the project from a local installation of a ColdFusion server or stand up a server instance on the fly via [CommandBox](https://www.ortussolutions.com/products/commandbox).
 
-To start a server using CommandBox, run `box start` in your terminal while pointing to the project working directory. The server will start on port `8520` and be available in the browser at `http://127.0.0.1:8520`. Note that by default the server will start using the latest version of `Adobe ColdFusion 2018`.
+To start a server using CommandBox, run `box start` in your terminal while pointing to the project working directory. The server will start on port `8520` and be available in the browser at `http://127.0.0.1:8520`. Note that by default the server will start using the latest version of `Adobe ColdFusion 2021`. To use a different version/engine, update the `cfengine` in `server.json`.
 
 The following sub-sections describe how to run the samples. Prior to running the samples, check that the configuration
 file is set up as described above and that the project has been built.
@@ -552,6 +556,136 @@ http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=documentmerge.Merg
 CommandBox:
 ```$xslt
 box task run taskFile=Exec :cfcPath=documentmerge.MergeDocumentToPDF
+```
+
+### Extract PDF
+
+These samples illustrate extracting content of PDF in a structured JSON format along with the renditions inside PDF. The output of SDK extract operation is Zip package. The Zip package consists of following:
+
+* The structuredData.json file with the extracted content & PDF element structure. See the [JSON schema](https://opensource.adobe.com/pdftools-sdk-docs/release/shared/extractJSONOutputSchema.json). Please refer the [Styling JSON schema](https://opensource.adobe.com/pdftools-sdk-docs/release/shared/extractJSONOutputSchemaStylingInfo.json) for a description of the output when the styling option is enabled.
+* A renditions folder(s) containing renditions for each element type selected as input. The folder name is either "tables" or "figures" depending on your specified element type. Each folder contains renditions with filenames that correspond to the element information in the JSON file.
+
+#### Extract Text Elements
+
+The sample CFC ExtractTextInfoFromPDF extracts text elements from PDF Document.
+
+Browser:
+```html
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=extractpdf.ExtractTextInfoFromPDF
+```
+
+CommandBox:
+```$xslt
+box task run taskFile=Exec :cfcPath=extractpdf.ExtractTextInfoFromPDF
+```
+
+#### Extract Text, Table Elements
+
+The sample CFC ExtractTextTableInfoFromPDF extracts text, table elements from PDF Document.
+
+Browser:
+```html
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=extractpdf.ExtractTextTableInfoFromPDF
+```
+
+CommandBox:
+```$xslt
+box task run taskFile=Exec :cfcPath=extractpdf.ExtractTextTableInfoFromPDF
+```
+
+#### Extract Text, Table Elements with Renditions of Table Elements
+
+The sample CFC ExtractTextTableInfoWithRenditionsFromPDF extracts text, table elements along with table renditions
+from PDF Document. Note that the output is a zip containing the structured information along with renditions as described
+in [section](#extract-pdf).
+
+Browser:
+```html
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=extractpdf.ExtractTextTableInfoWithRenditionsFromPDF
+```
+
+CommandBox:
+```$xslt
+box task run taskFile=Exec :cfcPath=extractpdf.ExtractTextTableInfoWithRenditionsFromPDF
+```
+
+#### Extract Text, Table Elements with Renditions of Figure, Table Elements
+
+The sample CFC ExtractTextTableInfoWithFiguresTablesRenditionsFromPDF extracts text, table elements along with figure
+and table element's renditions from PDF Document. Note that the output is a zip containing the structured information
+along with renditions as described in [section](#extract-pdf).
+
+Browser:
+```html
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=extractpdf.ExtractTextTableInfoWithFiguresTablesRenditionsFromPDF
+```
+
+CommandBox:
+```$xslt
+box task run taskFile=Exec :cfcPath=extractpdf.ExtractTextTableInfoWithFiguresTablesRenditionsFromPDF
+```
+
+#### Extract Text Elements and bounding boxes for Characters present in text blocks
+
+The sample CFC ExtractTextInfoWithCharBoundsFromPDF extracts text elements and bounding boxes for characters present in text blocks. Note that the output is a zip containing the structured information
+along with renditions as described in [section](#extract-pdf).
+
+Browser:
+```html
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=extractpdf.ExtractTextInfoWithCharBoundsFromPDF
+```
+
+CommandBox:
+```$xslt
+box task run taskFile=Exec :cfcPath=extractpdf.ExtractTextInfoWithCharBoundsFromPDF
+```
+
+#### Extract Text, Table Elements and bounding boxes for Characters present in text blocks with Renditions of Table Elements
+
+The sample CFC ExtractTextTableInfoWithCharBoundsFromPDF extracts text, table elements, bounding boxes for characters present in text blocks and
+table element's renditions from PDF Document. Note that the output is a zip containing the structured information
+along with renditions as described in [section](#extract-pdf).
+
+Browser:
+```html
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=extractpdf.ExtractTextTableInfoWithCharBoundsFromPDF
+```
+
+CommandBox:
+```$xslt
+box task run taskFile=Exec :cfcPath=extractpdf.ExtractTextTableInfoWithCharBoundsFromPDF
+```
+
+#### Extract Text, Table Elements with Renditions and CSV's of Table Elements
+
+The sample CFC ExtractTextTableInfoWithTableStructureFromPdf extracts text, table elements, table structures as CSV and
+table element's renditions from PDF Document. Note that the output is a zip containing the structured information
+along with renditions as described in [section](#extract-pdf).
+
+Browser:
+```html
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=extractpdf.ExtractTextTableInfoWithTableStructureFromPdf
+```
+
+CommandBox:
+```$xslt
+box task run taskFile=Exec :cfcPath=extractpdf.ExtractTextTableInfoWithTableStructureFromPdf
+```
+
+#### Extract Text, Table Elements with Styling information of text
+
+The sample CFC ExtractTextTableInfoWithStylingFromPDF extracts text and table elements along with the styling information of the text blocks.
+Note that the output is a zip containing the structured information
+along with renditions as described in [section](#extract-pdf).
+
+Browser:
+```html
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=extractpdf.ExtractTextTableInfoWithStylingFromPDF
+```
+
+CommandBox:
+```$xslt
+box task run taskFile=Exec :cfcPath=extractpdf.ExtractTextTableInfoWithStylingFromPDF
 ```
 
 ### Licensing

@@ -5,12 +5,12 @@
  */
 component displayname="Create PDF From DOCX InputStream" {
     public CreatePDFFromDOCXInputStream function init() {
-        variables.java_Credentials = createObject("java", "com.adobe.platform.operation.auth.Credentials");
-        variables.java_ExecutionContext = createObject("java", "com.adobe.platform.operation.ExecutionContext");
-        variables.java_CreatePDFOperation = createObject("java", "com.adobe.platform.operation.pdfops.CreatePDFOperation");
-        variables.java_FileRef = createObject("java", "com.adobe.platform.operation.io.FileRef");
+        variables.java_Credentials = createObject("java", "com.adobe.pdfservices.operation.auth.Credentials");
+        variables.java_ExecutionContext = createObject("java", "com.adobe.pdfservices.operation.ExecutionContext");
+        variables.java_CreatePDFOperation = createObject("java", "com.adobe.pdfservices.operation.pdfops.CreatePDFOperation");
+        variables.java_FileRef = createObject("java", "com.adobe.pdfservices.operation.io.FileRef");
         variables.java_FileInputStream = createObject("java", "java.io.FileInputStream");
-        variables.java_SupportedSourceFormat = createObject("java", "com.adobe.platform.operation.pdfops.CreatePDFOperation$SupportedSourceFormat");
+        variables.java_SupportedSourceFormat = createObject("java", "com.adobe.pdfservices.operation.pdfops.CreatePDFOperation$SupportedSourceFormat");
 
         return this;
     }

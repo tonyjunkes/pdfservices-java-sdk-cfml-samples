@@ -1,7 +1,7 @@
 {
-    "name":"pdftools-java-sdk-cfml-samples",
+    "name":"pdfservices-java-sdk-cfml-samples",
     "app":{
-        "cfengine":"adobe@2018"
+        "cfengine":"adobe@2021"
     },
     "web":{
         "http":{

@@ -6,15 +6,15 @@
  */
 component displayname="ProtectPDFWithOwnerPassword" {
     public ProtectPDFWithOwnerPassword function init() {
-        variables.java_Credentials = createObject("java", "com.adobe.platform.operation.auth.Credentials");
-        variables.java_ExecutionContext = createObject("java", "com.adobe.platform.operation.ExecutionContext");
-        variables.java_Permissions = createObject("java", "com.adobe.platform.operation.pdfops.options.protectpdf.Permissions");
-        variables.java_Permission = createObject("java", "com.adobe.platform.operation.pdfops.options.protectpdf.Permission");
-        variables.java_ProtectPDFOptions = createObject("java", "com.adobe.platform.operation.pdfops.options.protectpdf.ProtectPDFOptions");
-        variables.java_EncryptionAlgorithm = createObject("java", "com.adobe.platform.operation.pdfops.options.protectpdf.EncryptionAlgorithm");
-        variables.java_ContentEncryption = createObject("java", "com.adobe.platform.operation.pdfops.options.protectpdf.ContentEncryption");
-        variables.java_ProtectPDFOperation = createObject("java", "com.adobe.platform.operation.pdfops.ProtectPDFOperation");
-        variables.java_FileRef = createObject("java", "com.adobe.platform.operation.io.FileRef");
+        variables.java_Credentials = createObject("java", "com.adobe.pdfservices.operation.auth.Credentials");
+        variables.java_ExecutionContext = createObject("java", "com.adobe.pdfservices.operation.ExecutionContext");
+        variables.java_Permissions = createObject("java", "com.adobe.pdfservices.operation.pdfops.options.protectpdf.Permissions");
+        variables.java_Permission = createObject("java", "com.adobe.pdfservices.operation.pdfops.options.protectpdf.Permission");
+        variables.java_ProtectPDFOptions = createObject("java", "com.adobe.pdfservices.operation.pdfops.options.protectpdf.ProtectPDFOptions");
+        variables.java_EncryptionAlgorithm = createObject("java", "com.adobe.pdfservices.operation.pdfops.options.protectpdf.EncryptionAlgorithm");
+        variables.java_ContentEncryption = createObject("java", "com.adobe.pdfservices.operation.pdfops.options.protectpdf.ContentEncryption");
+        variables.java_ProtectPDFOperation = createObject("java", "com.adobe.pdfservices.operation.pdfops.ProtectPDFOperation");
+        variables.java_FileRef = createObject("java", "com.adobe.pdfservices.operation.io.FileRef");
 
         return this;
     }

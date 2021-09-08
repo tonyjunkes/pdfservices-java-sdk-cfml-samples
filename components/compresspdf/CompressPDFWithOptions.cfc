@@ -6,12 +6,12 @@
  */
 component displayname="Compress PDF With Options" {
     public CompressPDFWithOptions function init() {
-        variables.java_Credentials = createObject("java", "com.adobe.platform.operation.auth.Credentials");
-        variables.java_ExecutionContext = createObject("java", "com.adobe.platform.operation.ExecutionContext");
-        variables.java_CompressPDFOperation = createObject("java", "com.adobe.platform.operation.pdfops.CompressPDFOperation");
-        variables.java_CompressPDFOptions = createObject("java", "com.adobe.platform.operation.pdfops.options.compresspdf.CompressPDFOptions");
-        variables.java_CompressionLevel = createObject("java", "com.adobe.platform.operation.pdfops.options.compresspdf.CompressionLevel");
-        variables.java_FileRef = createObject("java", "com.adobe.platform.operation.io.FileRef");
+        variables.java_Credentials = createObject("java", "com.adobe.pdfservices.operation.auth.Credentials");
+        variables.java_ExecutionContext = createObject("java", "com.adobe.pdfservices.operation.ExecutionContext");
+        variables.java_CompressPDFOperation = createObject("java", "com.adobe.pdfservices.operation.pdfops.CompressPDFOperation");
+        variables.java_CompressPDFOptions = createObject("java", "com.adobe.pdfservices.operation.pdfops.options.compresspdf.CompressPDFOptions");
+        variables.java_CompressionLevel = createObject("java", "com.adobe.pdfservices.operation.pdfops.options.compresspdf.CompressionLevel");
+        variables.java_FileRef = createObject("java", "com.adobe.pdfservices.operation.io.FileRef");
 
         return this;
     }

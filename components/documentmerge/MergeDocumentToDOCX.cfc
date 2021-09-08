@@ -9,13 +9,13 @@
  */
 component displayname="Merge Document To DOCX" {
     public MergeDocumentToDOCX function init() {
-        variables.java_Credentials = createObject("java", "com.adobe.platform.operation.auth.Credentials");
-        variables.java_ExecutionContext = createObject("java", "com.adobe.platform.operation.ExecutionContext");
+        variables.java_Credentials = createObject("java", "com.adobe.pdfservices.operation.auth.Credentials");
+        variables.java_ExecutionContext = createObject("java", "com.adobe.pdfservices.operation.ExecutionContext");
         variables.java_JSONObject = createObject("java", "org.json.JSONObject");
-        variables.java_FileRef = createObject("java", "com.adobe.platform.operation.io.FileRef");
-        variables.java_DocumentMergeOptions = createObject("java", "com.adobe.platform.operation.pdfops.options.documentmerge.DocumentMergeOptions");
-        variables.java_DocumentMergeOperation = createObject("java", "com.adobe.platform.operation.pdfops.DocumentMergeOperation");
-        variables.java_OutputFormat = createObject("java", "com.adobe.platform.operation.pdfops.options.documentmerge.OutputFormat");
+        variables.java_FileRef = createObject("java", "com.adobe.pdfservices.operation.io.FileRef");
+        variables.java_DocumentMergeOptions = createObject("java", "com.adobe.pdfservices.operation.pdfops.options.documentmerge.DocumentMergeOptions");
+        variables.java_DocumentMergeOperation = createObject("java", "com.adobe.pdfservices.operation.pdfops.DocumentMergeOperation");
+        variables.java_OutputFormat = createObject("java", "com.adobe.pdfservices.operation.pdfops.options.documentmerge.OutputFormat");
 
         return this;
     }

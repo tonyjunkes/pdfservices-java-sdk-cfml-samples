@@ -7,10 +7,10 @@
  */
 component displayname="OcrPDF" {
     public OcrPDF function init() {
-        variables.java_Credentials = createObject("java", "com.adobe.platform.operation.auth.Credentials");
-        variables.java_ExecutionContext = createObject("java", "com.adobe.platform.operation.ExecutionContext");
-        variables.java_OCROperation = createObject("java", "com.adobe.platform.operation.pdfops.OCROperation");
-        variables.java_FileRef = createObject("java", "com.adobe.platform.operation.io.FileRef");
+        variables.java_Credentials = createObject("java", "com.adobe.pdfservices.operation.auth.Credentials");
+        variables.java_ExecutionContext = createObject("java", "com.adobe.pdfservices.operation.ExecutionContext");
+        variables.java_OCROperation = createObject("java", "com.adobe.pdfservices.operation.pdfops.OCROperation");
+        variables.java_FileRef = createObject("java", "com.adobe.pdfservices.operation.io.FileRef");
 
         return this;
     }

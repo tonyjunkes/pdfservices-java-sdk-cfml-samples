@@ -5,12 +5,12 @@
  */
 component displayname="RotatePDFPages" {
     public RotatePDFPages function init() {
-        variables.java_Credentials = createObject("java", "com.adobe.platform.operation.auth.Credentials");
-        variables.java_ExecutionContext = createObject("java", "com.adobe.platform.operation.ExecutionContext");
-        variables.java_RotatePagesOperation = createObject("java", "com.adobe.platform.operation.pdfops.RotatePagesOperation");
-        variables.java_PageRanges = createObject("java", "com.adobe.platform.operation.pdfops.options.PageRanges");
-        variables.java_Angle = createObject("java", "com.adobe.platform.operation.pdfops.options.rotatepages.Angle");
-        variables.java_FileRef = createObject("java", "com.adobe.platform.operation.io.FileRef");
+        variables.java_Credentials = createObject("java", "com.adobe.pdfservices.operation.auth.Credentials");
+        variables.java_ExecutionContext = createObject("java", "com.adobe.pdfservices.operation.ExecutionContext");
+        variables.java_RotatePagesOperation = createObject("java", "com.adobe.pdfservices.operation.pdfops.RotatePagesOperation");
+        variables.java_PageRanges = createObject("java", "com.adobe.pdfservices.operation.pdfops.options.PageRanges");
+        variables.java_Angle = createObject("java", "com.adobe.pdfservices.operation.pdfops.options.rotatepages.Angle");
+        variables.java_FileRef = createObject("java", "com.adobe.pdfservices.operation.io.FileRef");
 
         return this;
     }

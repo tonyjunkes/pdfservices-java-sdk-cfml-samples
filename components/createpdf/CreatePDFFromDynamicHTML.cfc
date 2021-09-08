@@ -8,13 +8,13 @@
  */
 component displayname="Create PDF From Dynamic HTML" {
     public CreatePDFFromDynamicHTML function init() {
-        variables.java_Credentials = createObject("java", "com.adobe.platform.operation.auth.Credentials");
-        variables.java_ExecutionContext = createObject("java", "com.adobe.platform.operation.ExecutionContext");
-        variables.java_CreatePDFOperation = createObject("java", "com.adobe.platform.operation.pdfops.CreatePDFOperation");
-        variables.java_FileRef = createObject("java", "com.adobe.platform.operation.io.FileRef");
-        variables.java_PageLayout = createObject("java", "com.adobe.platform.operation.pdfops.options.createpdf.PageLayout");
+        variables.java_Credentials = createObject("java", "com.adobe.pdfservices.operation.auth.Credentials");
+        variables.java_ExecutionContext = createObject("java", "com.adobe.pdfservices.operation.ExecutionContext");
+        variables.java_CreatePDFOperation = createObject("java", "com.adobe.pdfservices.operation.pdfops.CreatePDFOperation");
+        variables.java_FileRef = createObject("java", "com.adobe.pdfservices.operation.io.FileRef");
+        variables.java_PageLayout = createObject("java", "com.adobe.pdfservices.operation.pdfops.options.createpdf.PageLayout");
         variables.java_JSONObject = createObject("java", "org.json.JSONObject");
-        variables.java_CreatePDFOptions = createObject("java", "com.adobe.platform.operation.pdfops.options.createpdf.CreatePDFOptions");
+        variables.java_CreatePDFOptions = createObject("java", "com.adobe.pdfservices.operation.pdfops.options.createpdf.CreatePDFOptions");
 
         return this;
     }

@@ -5,12 +5,12 @@
  */
 component displayname="Create PDF From DOCX With Options" {
     public CreatePDFFromDOCXWithOptions function init() {
-        variables.java_Credentials = createObject("java", "com.adobe.platform.operation.auth.Credentials");
-        variables.java_ExecutionContext = createObject("java", "com.adobe.platform.operation.ExecutionContext");
-        variables.java_CreatePDFOperation = createObject("java", "com.adobe.platform.operation.pdfops.CreatePDFOperation");
-        variables.java_FileRef = createObject("java", "com.adobe.platform.operation.io.FileRef");
-        variables.java_SupportedDocumentLanguage = createObject("java", "com.adobe.platform.operation.pdfops.options.createpdf.word.SupportedDocumentLanguage");
-        variables.java_CreatePDFOptions = createObject("java", "com.adobe.platform.operation.pdfops.options.createpdf.CreatePDFOptions");
+        variables.java_Credentials = createObject("java", "com.adobe.pdfservices.operation.auth.Credentials");
+        variables.java_ExecutionContext = createObject("java", "com.adobe.pdfservices.operation.ExecutionContext");
+        variables.java_CreatePDFOperation = createObject("java", "com.adobe.pdfservices.operation.pdfops.CreatePDFOperation");
+        variables.java_FileRef = createObject("java", "com.adobe.pdfservices.operation.io.FileRef");
+        variables.java_SupportedDocumentLanguage = createObject("java", "com.adobe.pdfservices.operation.pdfops.options.createpdf.word.SupportedDocumentLanguage");
+        variables.java_CreatePDFOptions = createObject("java", "com.adobe.pdfservices.operation.pdfops.options.createpdf.CreatePDFOptions");
 
         return this;
     }
