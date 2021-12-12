@@ -10,6 +10,8 @@
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.CreatePDFFromDOCXWithOptions">Create a PDF File From a DOCX File With Options</a></li>
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.CreatePDFFromPPTX">Create a PDF File From a PPTX File</a></li>
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.CreatePDFFromStaticHTML">Create a PDF File From Static HTML (via Zip Archive)</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.CreatePDFFromHTMLWithInlineCSS">Create a PDF File From Static HTML file with inline CSS</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.CreatePDFFromURL">Create a PDF File From HTML specified via URL</a></li>
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.CreatePDFFromDynamicHTML">Create a PDF File From Dynamic HTML (via Zip Archive)</a></li>
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.CreatePDFWithInMemoryAuthCredentials">Create a PDF File From a DOCX File (By providing in-memory Authentication credentials)</a></li>
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.CreatePDFWithCustomTimeouts">Create a PDF File From a DOCX File (By providing custom value for timeouts)</a></li>
@@ -19,6 +21,7 @@
 <ul>
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=exportpdf.ExportPDFToDOCX">Export a PDF File To a DOCX File</a></li>
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=exportpdf.ExportPDFToJPEG">Export a PDF File To an Image Format (JPEG)</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=exportpdf.ExportPDFToJPEGList">Export a PDF File To a List of Images (JPEG)</a></li>
 </ul>
 
 <h2>Combine PDF Files</h2>
@@ -103,4 +106,10 @@
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=extractpdf.ExtractTextTableInfoWithCharBoundsFromPDF">Extract Text, Table Elements and Bounding Boxes For Characters Present In Text Blocks with Renditions of Table Elements</a></li>
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=extractpdf.ExtractTextTableInfoWithTableStructureFromPdf">Extract Text, Table Elements with Renditions and CSV's of Table Elements</a></li>
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=extractpdf.ExtractTextTableInfoWithStylingFromPDF">Extract Text, Table Elements with Styling information of Text</a></li>
+</ul>
+
+<h2>Fetch PDF Properties</h2>
+<ul>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=pdfproperties.PDFPropertiesAsFile">The sample class PDFPropertiesAsFile fetches the properties of an input PDF, as a JSON file.</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=pdfproperties.PDFPropertiesAsJSONObject">The sample class PDFPropertiesAsJSONObject fetches the properties of an input PDF, as a JSON Object.</a></li>
 </ul>

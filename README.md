@@ -145,6 +145,34 @@ CommandBox:
 box task run taskFile=Exec :cfcPath=createpdf.CreatePDFFromStaticHTML
 ```
 
+#### Create a PDF File From Static HTML file with inline CSS
+
+The sample class CreatePDFFromHTMLWithInlineCSS creates a PDF file from an input HTML file with inline CSS.
+
+Browser:
+```html
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=createpdf.CreatePDFFromHTMLWithInlineCSS
+```
+
+CommandBox:
+```$xslt
+box task run taskFile=Exec :cfcPath=createpdf.CreatePDFFromHTMLWithInlineCSS
+```
+
+#### Create a PDF File From HTML specified via URL
+
+The sample class CreatePDFFromURL creates a PDF file rom an HTML specified via URL.
+
+Browser:
+```html
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=createpdf.CreatePDFFromURL
+```
+
+CommandBox:
+```$xslt
+box task run taskFile=Exec :cfcPath=createpdf.CreatePDFFromURL
+```
+
 #### Create a PDF File From Dynamic HTML (via Zip Archive)
 
 The sample CFC CreatePDFFromDynamicHTML converts a zip file, containing the input HTML file and its resources, along with the input data to a PDF file. The input data is used by the JavaScript in the HTML file to manipulate the HTML DOM, thus effectively updating the source HTML file. This mechanism can be used to provide data to the template HTML dynamically and then, convert it into a PDF file.
@@ -218,6 +246,20 @@ http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=exportpdf.ExportPD
 CommandBox:
 ```$xslt
 box task run taskFile=Exec :cfcPath=exportpdf.ExportPDFToJPEG
+```
+
+#### Export a PDF File To a List of Images (JPEG)
+
+The sample class ExportPDFToJPEGList converts a PDF file's pages to a list of JPEG images.
+
+Browser:
+```html
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=exportpdf.ExportPDFToJPEGList
+```
+
+CommandBox:
+```$xslt
+box task run taskFile=Exec :cfcPath=exportpdf.ExportPDFToJPEGList
 ```
 
 ### Combine PDF Files
@@ -686,6 +728,38 @@ http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=extractpdf.Extract
 CommandBox:
 ```$xslt
 box task run taskFile=Exec :cfcPath=extractpdf.ExtractTextTableInfoWithStylingFromPDF
+```
+
+### Fetch PDF Properties
+
+These samples illustrate how to fetch properties of a PDF file in the JSON format.
+
+#### Fetch PDF Properties as a JSON File
+
+The sample class PDFPropertiesAsFile fetches the properties of an input PDF, as a JSON file.
+
+Browser:
+```html
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=pdfproperties.PDFPropertiesAsFile
+```
+
+CommandBox:
+```$xslt
+box task run taskFile=Exec :cfcPath=pdfproperties.PDFPropertiesAsFile
+```
+
+#### Fetch PDF Properties as a JSON Object
+
+The sample class PDFPropertiesAsJSONObject fetches the properties of an input PDF, as a JSON Object.
+
+Browser:
+```html
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=pdfproperties.PDFPropertiesAsJSONObject
+```
+
+CommandBox:
+```$xslt
+box task run taskFile=Exec :cfcPath=pdfproperties.PDFPropertiesAsJSONObject
 ```
 
 ### Licensing
