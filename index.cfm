@@ -15,6 +15,7 @@
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.CreatePDFFromDynamicHTML">Create a PDF File From Dynamic HTML (via Zip Archive)</a></li>
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.CreatePDFWithInMemoryAuthCredentials">Create a PDF File From a DOCX File (By providing in-memory Authentication credentials)</a></li>
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.CreatePDFWithCustomTimeouts">Create a PDF File From a DOCX File (By providing custom value for timeouts)</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=createpdf.CreatePDFWithProxyServer">Create a PDF File From a DOCX File (By providing Proxy Server settings)</a></li>
 </ul>
 
 <h2>Export PDF to Other Formats</h2>
@@ -92,6 +93,7 @@
 
 <h2>Document Merge</h2>
 <ul>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=documentmerge.MergeDocumentToDOCXWithFragments">Merge Document to DOCX with Fragments</a></li>
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=documentmerge.MergeDocumentToDOCX">Merge Document to DOCX</a></li>
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=documentmerge.MergeDocumentToPDF">Merge Document to PDF</a></li>
 </ul>

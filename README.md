@@ -217,6 +217,20 @@ CommandBox:
 box task run taskFile=Exec :cfcPath=createpdf.CreatePDFWithCustomTimeouts
 ```
 
+#### Create a PDF File From a DOCX File (By providing Proxy Server settings)
+
+The sample project CreatePDFWithPorxyServer highlights how to provide Proxy Server configurations to allow all API calls via that proxy Server.
+
+Browser:
+```html
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=createpdf.CreatePDFWithProxyServer
+```
+
+CommandBox:
+```$xslt
+box task run taskFile=Exec :cfcPath=createpdf.CreatePDFWithProxyServer
+```
+
 ### Export PDF To Other Formats
 These samples illustrate how to export PDF files to other formats.
 
@@ -569,6 +583,21 @@ box task run taskFile=Exec :cfcPath=splitpdf.SplitPDFByPageRanges
 Adobe Document Merge Operation allows you to produce high fidelity PDF and Word documents with dynamic data inputs. Using this operation, you can merge your JSON data with Word templates to create dynamic documents for contracts and agreements, invoices, proposals, reports, forms, branded marketing documents and more.
 
 To know more about document generation and document templates, please checkout the [documentation](http://www.adobe.com/go/dcdocgen_overview_doc)
+
+#### Merge Document to DOCX with Fragments
+
+The sample class MergeDocumentToDOCX merges the Word based document template with the input JSON data and fragments JSON to generate
+the output document in the DOCX format.
+
+Browser:
+```html
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=documentmerge.MergeDocumentToDOCXWithFragments
+```
+
+CommandBox:
+```$xslt
+box task run taskFile=Exec :cfcPath=documentmerge.MergeDocumentToDOCXWithFragments
+```
 
 #### Merge Document to DOCX
 
