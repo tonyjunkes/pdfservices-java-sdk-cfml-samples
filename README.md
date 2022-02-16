@@ -21,6 +21,16 @@ The SDK also supports providing the authentication credentials at runtime, witho
 refer this [section](#create-a-pdf-file-from-a-docx-file-by-providing-in-memory-authentication-credentials) to
 know more.
 
+## Client Configurations
+
+The SDK supports setting up custom socket timeout or connect timeout for the API calls. Please
+refer this [section](#create-a-pdf-file-from-a-docx-file-by-providing-custom-value-for-timeouts) to
+know more.
+
+The SDK also supports setting up Proxy Server configurations which helps in successful API calls for network where all outgoing calls have to go through a proxy else, they are blocked. Please
+refer this [section](#create-a-pdf-file-from-a-docx-file-by-providing-proxy-server-settings) to
+know more.
+
 ## Quota Exhaustion
 
 If you receive ServiceUsageException during the Samples run, it means that trial credentials have exhausted their quota
