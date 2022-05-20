@@ -29,7 +29,7 @@ component displayname="Create PDF From URL" {
 
             // Set operation input from a source file.
             var source = variables.java_FileRef.createFromURL(
-                variables.java_URL.init("https://www.adobe.io")
+                variables.java_URL.init("https://developer.adobe.com/document-services/docs/overview/")
             );
             htmlToPDFOperation.setInput(source);
 
