@@ -1,0 +1,58 @@
+/**
+ * This sample illustrates how to retrieve properties of an input PDF file.
+ *
+ * Refer to README.md for instructions on how to run the samples.
+ */
+component displayname="Get PDF Properties" {
+    public GetPDFProperties function init() {
+        variables.java_Credentials = createObject("java", "com.adobe.pdfservices.operation.auth.Credentials");
+        variables.java_ExecutionContext = createObject("java", "com.adobe.pdfservices.operation.ExecutionContext");
+        variables.java_CreatePDFOperation = createObject("java", "com.adobe.pdfservices.operation.pdfops.CreatePDFOperation");
+        variables.java_FileRef = createObject("java", "com.adobe.pdfservices.operation.io.FileRef");
+        variables.java_PDFPropertiesOperation = createObject("java", "com.adobe.pdfservices.operation.pdfops.PDFPropertiesOperation");
+        variables.java_PDFPropertiesOptions = createObject("java", "com.adobe.pdfservices.operation.pdfops.options.pdfproperties.PDFPropertiesOptions");
+
+        return this;
+    }
+
+    public void function run() {
+        try {
+            // Initial setup, create credentials instance.
+            var credentials = java_Credentials.serviceAccountCredentialsBuilder()
+                .fromFile(application.credentialsJSONFile)
+                .build();
+
+            // Create an ExecutionContext using credentials and create a new operation instance.
+            var executionContext = variables.java_ExecutionContext.create(credentials);
+            var pdfPropertiesOperation = variables.java_PDFPropertiesOperation.createNew();
+
+            // Set operation input from a source file.
+            var source = variables.java_FileRef.createFromLocalFile(
+                application.resourcesPath & "/pdfPropertiesInput.pdf"
+            );
+            pdfPropertiesOperation.setInputFile(source);
+
+            // Build PDF Properties options to include page level properties and set them into the operation
+            var pdfPropertiesOptions = variables.java_PDFPropertiesOptions
+                .PDFPropertiesOptionsBuilder()
+                .includePageLevelProperties(true)
+                .build();
+            pdfPropertiesOperation.setOptions(pdfPropertiesOptions);
+
+            // Execute the operation.
+            var result = pdfPropertiesOperation.execute(executionContext);
+
+            // Fetch the requisite properties of the specified PDF.
+            writeLog("The Page level properties of the PDF: " & result.getDocument().getPageCount());
+
+            writeLog("The Fonts used in the PDF: ");
+
+            for(var font in result.getDocument().getFonts()) {
+                writeLog(font.getName());
+            }
+        }
+        catch(any e) {
+            writeLog("Exception encountered while executing operation: #e.message#");
+        }
+    }
+}

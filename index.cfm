@@ -21,8 +21,9 @@
 <h2>Export PDF to Other Formats</h2>
 <ul>
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=exportpdf.ExportPDFToDOCX">Export a PDF File To a DOCX File</a></li>
-    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=exportpdf.ExportPDFToJPEG">Export a PDF File To an Image Format (JPEG)</a></li>
-    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=exportpdf.ExportPDFToJPEGList">Export a PDF File To a List of Images (JPEG)</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=exportpdf.ExportPDFToDOCXWithOCROption">Export a PDF file to a DOCX file (apply OCR on the PDF file)</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=exportpdftoimages.ExportPDFToJPEG">Export a PDF File To an Image Format (JPEG)</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=exportpdftoimages.ExportPDFToJPEGZip">Export a PDF File To a Zip of Images (JPEG)</a></li>
 </ul>
 
 <h2>Combine PDF Files</h2>
@@ -110,8 +111,7 @@
     <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=extractpdf.ExtractTextTableInfoWithStylingFromPDF">Extract Text, Table Elements with Styling information of Text</a></li>
 </ul>
 
-<h2>Fetch PDF Properties</h2>
+<h2>PDF Properties</h2>
 <ul>
-    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=pdfproperties.PDFPropertiesAsFile">The sample class PDFPropertiesAsFile fetches the properties of an input PDF, as a JSON file.</a></li>
-    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=pdfproperties.PDFPropertiesAsJSONObject">The sample class PDFPropertiesAsJSONObject fetches the properties of an input PDF, as a JSON Object.</a></li>
+    <li><a href="http://127.0.0.1:8520/components/proxy.cfc?method=run&amp;cfcPath=pdfproperties.GetPDFProperties">Fetch PDF Properties</a></li>
 </ul>

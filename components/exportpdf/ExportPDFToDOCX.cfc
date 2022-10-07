@@ -17,7 +17,7 @@ component displayname="Export PDF To DOCX" {
     public void function run() {
         try {
             // Initial setup, create credentials instance.
-            var credentials = Credentials.serviceAccountCredentialsBuilder()
+            var credentials = variables.java_Credentials.serviceAccountCredentialsBuilder()
                 .fromFile(application.credentialsJSONFile)
                 .build();
 

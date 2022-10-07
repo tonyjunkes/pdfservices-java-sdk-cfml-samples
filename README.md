@@ -157,7 +157,7 @@ box task run taskFile=Exec :cfcPath=createpdf.CreatePDFFromStaticHTML
 
 #### Create a PDF File From Static HTML file with inline CSS
 
-The sample class CreatePDFFromHTMLWithInlineCSS creates a PDF file from an input HTML file with inline CSS.
+The sample CFC CreatePDFFromHTMLWithInlineCSS creates a PDF file from an input HTML file with inline CSS.
 
 Browser:
 ```html
@@ -171,7 +171,7 @@ box task run taskFile=Exec :cfcPath=createpdf.CreatePDFFromHTMLWithInlineCSS
 
 #### Create a PDF File From HTML specified via URL
 
-The sample class CreatePDFFromURL creates a PDF file rom an HTML specified via URL.
+The sample CFC CreatePDFFromURL creates a PDF file rom an HTML specified via URL.
 
 Browser:
 ```html
@@ -257,33 +257,45 @@ CommandBox:
 ```$xslt
 box task run taskFile=Exec :cfcPath=exportpdf.ExportPDFToDOCX
 ```
+#### Export a PDF file to a DOCX file (apply OCR on the PDF file)
 
+The sample CFC ExportPDFToDOCXWithOCROption converts a PDF file to a DOCX file. OCR processing is also performed on the input PDF file to extract text from images in the document.
+
+Browser:
+```html
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=exportpdf.ExportPDFToDOCXWithOCROption
+```
+
+CommandBox:
+```$xslt
+box task run taskFile=Exec :cfcPath=exportpdf.ExportPDFToDOCXWithOCROption
+```
 #### Export a PDF File To an Image Format (JPEG)
 
-The sample CFC ExportPDFToJPEG converts a PDF file's pages to JPEG images. Note that the output is a zip archive containing the individual images.
+The sample CFC ExportPDFToJPEG converts a PDF file's pages to a list of JPEG images.
 
 Browser:
 ```html
-http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=exportpdf.ExportPDFToJPEG
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=exportpdftoimages.ExportPDFToJPEG
 ```
 
 CommandBox:
 ```$xslt
-box task run taskFile=Exec :cfcPath=exportpdf.ExportPDFToJPEG
+box task run taskFile=Exec :cfcPath=exportpdftoimages.ExportPDFToJPEG
 ```
 
-#### Export a PDF File To a List of Images (JPEG)
+#### Export a PDF File To a Zip of Images (JPEG)
 
-The sample class ExportPDFToJPEGList converts a PDF file's pages to a list of JPEG images.
+The sample CFC ExportPDFToJPEGZip converts a PDF file's pages to JPEG images. The resulting file is a ZIP archive containing one image per page of the source PDF file.
 
 Browser:
 ```html
-http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=exportpdf.ExportPDFToJPEGList
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=exportpdftoimages.ExportPDFToJPEGZip
 ```
 
 CommandBox:
 ```$xslt
-box task run taskFile=Exec :cfcPath=exportpdf.ExportPDFToJPEGList
+box task run taskFile=Exec :cfcPath=exportpdftoimages.ExportPDFToJPEGZip
 ```
 
 ### Combine PDF Files
@@ -596,7 +608,7 @@ To know more about document generation and document templates, please checkout t
 
 #### Merge Document to DOCX with Fragments
 
-The sample class MergeDocumentToDOCX merges the Word based document template with the input JSON data and fragments JSON to generate
+The sample CFC MergeDocumentToDOCX merges the Word based document template with the input JSON data and fragments JSON to generate
 the output document in the DOCX format.
 
 Browser:
@@ -648,7 +660,7 @@ These samples illustrate extracting content of PDF in a structured JSON format a
 
 #### Extract Text Elements
 
-The sample CFC ExtractTextInfoFromPDF extracts text elements from PDF Document.
+The sample CFC ExtractTextInfoFromPDF.cfc extracts text elements from PDF document.
 
 Browser:
 ```html
@@ -662,7 +674,7 @@ box task run taskFile=Exec :cfcPath=extractpdf.ExtractTextInfoFromPDF
 
 #### Extract Text, Table Elements
 
-The sample CFC ExtractTextTableInfoFromPDF extracts text, table elements from PDF Document.
+The sample CFC ExtractTextTableInfoFromPDF extracts text, table elements from PDF document.
 
 Browser:
 ```html
@@ -676,9 +688,7 @@ box task run taskFile=Exec :cfcPath=extractpdf.ExtractTextTableInfoFromPDF
 
 #### Extract Text, Table Elements with Renditions of Table Elements
 
-The sample CFC ExtractTextTableInfoWithRenditionsFromPDF extracts text, table elements along with table renditions
-from PDF Document. Note that the output is a zip containing the structured information along with renditions as described
-in [section](#extract-pdf).
+The sample CFC ExtractTextTableInfoWithRenditionsFromPDF extracts text, table elements along with table renditions from PDF document. Note that the output is a zip containing the structured information along with renditions as described in [section](#extract-pdf).
 
 Browser:
 ```html
@@ -692,9 +702,7 @@ box task run taskFile=Exec :cfcPath=extractpdf.ExtractTextTableInfoWithRendition
 
 #### Extract Text, Table Elements with Renditions of Figure, Table Elements
 
-The sample CFC ExtractTextTableInfoWithFiguresTablesRenditionsFromPDF extracts text, table elements along with figure
-and table element's renditions from PDF Document. Note that the output is a zip containing the structured information
-along with renditions as described in [section](#extract-pdf).
+The sample CFC ExtractTextTableInfoWithFiguresTablesRenditionsFromPDF extracts text, table elements along with figure and table element's renditions from PDF document. Note that the output is a zip containing the structured information along with renditions as described in [section](#extract-pdf).
 
 Browser:
 ```html
@@ -708,8 +716,7 @@ box task run taskFile=Exec :cfcPath=extractpdf.ExtractTextTableInfoWithFiguresTa
 
 #### Extract Text Elements and bounding boxes for Characters present in text blocks
 
-The sample CFC ExtractTextInfoWithCharBoundsFromPDF extracts text elements and bounding boxes for characters present in text blocks. Note that the output is a zip containing the structured information
-along with renditions as described in [section](#extract-pdf).
+The sample CFC ExtractTextInfoWithCharBoundsFromPDF extracts text elements and bounding boxes for characters present in text blocks. Note that the output is a zip containing the structured information along with renditions as described in [section](#extract-pdf).
 
 Browser:
 ```html
@@ -723,9 +730,7 @@ box task run taskFile=Exec :cfcPath=extractpdf.ExtractTextInfoWithCharBoundsFrom
 
 #### Extract Text, Table Elements and bounding boxes for Characters present in text blocks with Renditions of Table Elements
 
-The sample CFC ExtractTextTableInfoWithCharBoundsFromPDF extracts text, table elements, bounding boxes for characters present in text blocks and
-table element's renditions from PDF Document. Note that the output is a zip containing the structured information
-along with renditions as described in [section](#extract-pdf).
+The sample CFC ExtractTextTableInfoWithCharBoundsFromPDF extracts text, table elements, bounding boxes for characters present in text blocks and table element's renditions from PDF document. Note that the output is a zip containing the structured information along with renditions as described in [section](#extract-pdf).
 
 Browser:
 ```html
@@ -740,7 +745,7 @@ box task run taskFile=Exec :cfcPath=extractpdf.ExtractTextTableInfoWithCharBound
 #### Extract Text, Table Elements with Renditions and CSV's of Table Elements
 
 The sample CFC ExtractTextTableInfoWithTableStructureFromPdf extracts text, table elements, table structures as CSV and
-table element's renditions from PDF Document. Note that the output is a zip containing the structured information
+table element's renditions from PDF document. Note that the output is a zip containing the structured information
 along with renditions as described in [section](#extract-pdf).
 
 Browser:
@@ -769,36 +774,22 @@ CommandBox:
 box task run taskFile=Exec :cfcPath=extractpdf.ExtractTextTableInfoWithStylingFromPDF
 ```
 
-### Fetch PDF Properties
+### PDF Properties
 
-These samples illustrate how to fetch properties of a PDF file in the JSON format.
+This sample illustrates how to fetch properties of a PDF file.
 
-#### Fetch PDF Properties as a JSON File
+#### Fetch PDF Properties
 
-The sample class PDFPropertiesAsFile fetches the properties of an input PDF, as a JSON file.
+The sample CFC GetPDFProperties fetches the properties of an input PDF.
 
 Browser:
 ```html
-http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=pdfproperties.PDFPropertiesAsFile
+http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=pdfproperties.GetPDFProperties
 ```
 
 CommandBox:
 ```$xslt
-box task run taskFile=Exec :cfcPath=pdfproperties.PDFPropertiesAsFile
-```
-
-#### Fetch PDF Properties as a JSON Object
-
-The sample class PDFPropertiesAsJSONObject fetches the properties of an input PDF, as a JSON Object.
-
-Browser:
-```html
-http://127.0.0.1:8520/components/proxy.cfc?method=run&cfcPath=pdfproperties.PDFPropertiesAsJSONObject
-```
-
-CommandBox:
-```$xslt
-box task run taskFile=Exec :cfcPath=pdfproperties.PDFPropertiesAsJSONObject
+box task run taskFile=Exec :cfcPath=pdfproperties.GetPDFProperties
 ```
 
 ### Licensing
